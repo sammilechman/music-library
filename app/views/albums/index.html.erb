@@ -1,0 +1,19 @@
+<body>
+  <h3>
+    List of all albums in database
+  </h3>
+
+  <% @albums.each do |a| %>
+
+    <p>
+      <%= link_to a.title, album_url(a.id) %>
+    </p>
+
+  <% end %>
+
+  <%= long_line %>
+
+  <p>
+    <%= link_to "Add a new album to the database", new_album_url %>
+  </p>
+</body>

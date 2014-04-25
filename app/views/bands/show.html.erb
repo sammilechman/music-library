@@ -1,0 +1,17 @@
+<h2>The "<%= @band.name %>" Band Page</h2>
+
+<h3>Albums</h3>
+
+<% @band.albums.each do |a| %>
+
+  <p><%= link_to "#{a.title}", album_url(a.id) %><p>
+
+<% end %>
+
+<%= long_line %>
+<p>
+  <%= link_to "Back to Bands Index", bands_url %>
+</p>
+<p>
+  <%= link_to "Edit this band", edit_band_url %>
+</p>

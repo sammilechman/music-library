@@ -1,6 +1,6 @@
 Music::Application.routes.draw do
 
-  root 'users#index'
+  root 'bands#index'
 
   resources :users
   resource :session

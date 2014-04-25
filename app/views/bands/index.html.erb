@@ -1,0 +1,11 @@
+<body>
+  <h3>
+    List of all bands in database
+  </h3>
+
+  <% @bands.each do |b| %>
+
+    <p><%= link_to b.name, band_url(b.id) %></p>
+
+  <% end %>
+</body>

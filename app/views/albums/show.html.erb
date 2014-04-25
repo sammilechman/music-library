@@ -1,0 +1,29 @@
+<body>
+
+  <h2>
+    Album page: "<%= @album.title %>"
+  </h2>
+
+  <p>
+    <strong>By the band</strong> <%= link_to "#{@album.band.name}", band_url(@album.band_id) %>
+  </p>
+
+  <p>
+    <strong>Live album?</strong>
+    <%if @album.live == false %>
+       No
+    <%else %>
+      Yes
+    <%end %>
+  </p>
+
+  <p>
+    <%= link_to "Edit this album", edit_album_url(@album.id) %>
+  </p>
+
+  <%= long_line %>
+
+  <p>
+  <%= link_to "Back to Albums Index", albums_url %>
+  </p>
+</body>
