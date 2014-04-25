@@ -1,0 +1,36 @@
+<form action="<%= @track.persisted? ? track_url : tracks_url %>" method="POST">
+  <%= auth_token_input %>
+  <% if @track.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <p>
+    <label for="track_title"> Track title: </label>
+    <input type="text" id ="track_title" name="track[title]" value=<%=@track.title%>>
+  </p>
+
+  <label for="album_name"> Authored by: </label>
+  <select id ="album_name" name="track[album_id]">
+    <%@albums.each do |a| %>
+      <option value="<%= a.id %>"><%= a.title %> by <%= a.band.name %></option>
+    <%end %>
+  </select>
+
+  <p>
+    <label for="bonus"> Album title: </label>
+    <select id ="bonus" name="track[bonus]">
+      <option value=true>Yes</option>
+      <option value=false>No</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="lyrics"> (optional) Track lyrics: </label>
+    <input type="text" id ="lyrics" name="track[lyrics]" value=<%=@track.lyrics%>>
+  </p>
+
+  <p>
+    <input type="Submit" value='<%= @track.persisted? ? "Update track" : "Create track" %>'
+  </p>
+
+</form>
