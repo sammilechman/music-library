@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token!
 
   validates :email, :password_digest, :session_token, presence: true
+  validates :email, uniqueness: true
 
 
   # def self.generate_session_token
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def ensure_session_token!
-    @session_token ||= reset_session_token!
+    self.session_token ||= SecureRandom.hex
   end
 
   def self.find_by_credentials(creds)
@@ -41,7 +42,7 @@ class User < ActiveRecord::Base
 
   def password=(plaintext)
     @password = plaintext
-    self.password_digest = BCrypt::Password.new(plaintext)
+    self.password_digest = BCrypt::Password.create(plaintext)
   end
 
   def is_password?(plaintext)

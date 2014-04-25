@@ -2,4 +2,10 @@
   <p>
     This is the Users Index
   </p>
+
+  <% User.all.each do |u| %>
+  <strong>Email:</strong> <%= u.email %><br>
+  <strong>Password_digest:</strong> <%= u.password_digest %><br>
+  <strong>Session_token:</strong> <%= u.session_token %><br><br>
+  <% end %>
 </body>

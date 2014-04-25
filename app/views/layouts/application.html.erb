@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<% if flash[:errors] %>
+    <%= flash[:errors] %><br><br>
+<% end %>
+
+<%= flash[:notice] %>
+
+<% if logged_in?  %>
+  Welcome <%= current_user.email %>
+  <%= button_to "Sign out", session_url, method: :delete %>
+<% else %>
+  Welcome, prospective Music App user.<br><br>
+  <%= link_to "Sign in", new_session_url %>
+  <%= link_to "Sign up!", new_user_url %>
+<% end %>
+
 <%= yield %>
 
 </body>
