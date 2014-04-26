@@ -3,3 +3,5 @@
 </h1>
 
 <%= render "form" %>
+
+<%= button_to "Delete this band", track_url(@band.id), method: :delete %>

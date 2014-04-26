@@ -1,3 +1,5 @@
 <h2>Edit an existing Track</h2><br>
 
 <%= render "form" %>
+
+<%= button_to "Delete this track", track_url(@track.id), method: :delete %>

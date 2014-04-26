@@ -1,3 +1,5 @@
 <h2>Edit an existing Album</h2><br>
 
 <%= render "form" %>
+
+<%= button_to "Delete this album", track_url(@album.id), method: :delete %>

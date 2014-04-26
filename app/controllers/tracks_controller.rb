@@ -55,7 +55,7 @@ class TracksController < ApplicationController
     @track = Track.find_by_id(params[:id])
     if @track.delete
       flash[:notice] = "Track \"#{@track.title}\" deleted!"
-      redirect_to bands_url
+      redirect_to tracks_url
     else
       flash.now[:errors] = @track.errors.full_messages
       render track_url(@track.id)

@@ -55,7 +55,7 @@ class AlbumsController < ApplicationController
     @album = Album.find_by_id(params[:id])
     if @album.delete
       flash[:notice] = "Album \"#{@album.title}\" deleted!"
-      redirect_to bands_url
+      redirect_to albums_url
     else
       flash.now[:errors] = @album.errors.full_messages
       render album_url(@album.id)

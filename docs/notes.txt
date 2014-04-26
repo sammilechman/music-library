@@ -3,4 +3,9 @@ Known bugs:
 - When you "Edit this track", the track title WILL appear on the form, but truncated at the first space/non-alphabet character.
 
 - When you "Add a track to this album" or "Add an album to this artist", it doesn't automatically select that band from drop down.
+(http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease)
+
+- Haven't made good use of nested paths.
+
+
 
