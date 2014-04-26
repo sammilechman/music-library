@@ -1,8 +1,12 @@
 <body>
 
-  <h2>
+  <h3>
     Album page: "<%= @album.title %>"
-  </h2>
+  </h3>
+
+  <p>
+    <%= link_to "Edit this album", edit_album_url(@album.id) %>
+  </p>
 
   <p>
     <strong>By the band</strong> <%= link_to "#{@album.band.name}", band_url(@album.band_id) %>
@@ -18,8 +22,13 @@
   </p>
 
   <p>
-    <%= link_to "Edit this album", edit_album_url(@album.id) %>
+    <strong>Tracks from this album in database:</strong>
+    <% @album.tracks.each_with_index do |t, i| %>
+    <%= i+1 %> - <%= link_to t.title, track_url(t.id) %>
+    <% end %>
   </p>
+
+  <%= link_to "Add a track to this album", new_track_url %>
 
   <%= long_line %>
 

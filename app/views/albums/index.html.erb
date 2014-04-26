@@ -3,10 +3,10 @@
     List of all albums in database
   </h3>
 
-  <% @albums.each do |a| %>
+  <% @albums.each_with_index do |a, i| %>
 
     <p>
-      <%= link_to a.title, album_url(a.id) %>
+      <%= (i+1) %> -  <%= link_to a.title, album_url(a.id) %>
     </p>
 
   <% end %>

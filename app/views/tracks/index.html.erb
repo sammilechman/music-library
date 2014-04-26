@@ -1,0 +1,21 @@
+<body>
+  <h3>
+    List of all tracks in database
+  </h3>
+
+  <% @tracks.each do |t| %>
+
+    <p>
+      <%= link_to t.title, track_url(t.id) %> from
+      <%= link_to t.album.title, album_url(t.album_id) %> by
+      <%= link_to t.album.band.name, band_url(t.album.band_id) %>
+    </p>
+
+  <% end %>
+
+  <%= long_line %>
+
+  <p>
+    <%= link_to "Add a new track to the database", new_track_url %>
+  </p>
+</body>

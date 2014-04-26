@@ -9,7 +9,7 @@
     <input type="text" id ="track_title" name="track[title]" value=<%=@track.title%>>
   </p>
 
-  <label for="album_name"> Authored by: </label>
+  <label for="album_name"> Album/Artist: </label>
   <select id ="album_name" name="track[album_id]">
     <%@albums.each do |a| %>
       <option value="<%= a.id %>"><%= a.title %> by <%= a.band.name %></option>
@@ -17,7 +17,7 @@
   </select>
 
   <p>
-    <label for="bonus"> Album title: </label>
+    <label for="bonus"> Bonus track? </label>
     <select id ="bonus" name="track[bonus]">
       <option value=true>Yes</option>
       <option value=false>No</option>

@@ -17,7 +17,7 @@
 <% end %>
 
 <% if logged_in?  %>
-  Welcome <%= current_user.email %>
+  Welcome <%= link_to current_user.email, user_url(current_user.id) %>
   <%= button_to "Sign out", session_url, method: :delete %>
 <% else %>
   Welcome, prospective Music App user.<br><br>

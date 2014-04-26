@@ -1,0 +1,35 @@
+<body>
+
+  <h3>
+    Track page: "<%= @track.title %>"
+  </h3>
+
+  <p>
+    <%= link_to "Edit this track", edit_track_url(@track.id) %>
+  </p>
+
+  <p>
+    <strong>From the album: </strong> <%= link_to "#{@track.album.title}", album_url(@track.album_id) %> by <%= link_to "#{@track.album.band.name}", band_url(@track.album.band_id) %>
+  </p>
+
+  <p>
+    <strong>Bonus track? </strong>
+    <%if @track.bonus == false %>
+       No
+    <%else %>
+      Yes
+    <%end %>
+  </p>
+
+  <% if @track.lyrics != "" %>
+    <p>
+      <strong>Lyrics:</strong> <%= @track.lyrics %>
+    </p>
+  <% end %>
+
+  <%= long_line %>
+
+  <p>
+  <%= link_to "Back to Tracks Index", tracks_url %>
+  </p>
+</body>
