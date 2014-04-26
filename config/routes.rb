@@ -5,9 +5,15 @@ Music::Application.routes.draw do
   resources :users
   resource :session
 
-  resources :bands
+  resources :bands do
+    resources :albums, only: [:index, :new, :create]
+  end
+
+  resources :albums do
+    resources :tracks, only: [:index, :new, :create]
+  end
+
   resources :tracks
-  resources :albums
 
 
 

@@ -24,7 +24,7 @@
   <p>
     <strong>Tracks from this album in database:</strong>
     <% @album.tracks.each_with_index do |t, i| %>
-    <%= i+1 %> - <%= link_to t.title, track_url(t.id) %>
+    <p><%= i+1 %> - <%= link_to t.title, track_url(t.id) %></p>
     <% end %>
   </p>
 
