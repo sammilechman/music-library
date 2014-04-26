@@ -1,0 +1,22 @@
+<body>
+
+  <form action= "<%= track_notes_url(@track) %>" method="POST">
+    <%= auth_token_input %>
+
+
+    <p>
+      <label for="note_title"> Note title: </label>
+      <input type="text" id ="note_title" name="note[title]" value=<%=@note.title%>>
+    </p>
+
+    <p>
+      <label for="note_text"> Note text: </label>
+      <input type="text" id ="note_text" name="note[text]" value=<%=@note.text%>>
+    </p>
+
+<input type="Submit" value = "Submit">
+
+
+  </form>
+
+</body>
